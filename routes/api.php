@@ -32,6 +32,8 @@ Route::get('news', function(Request $request) {
 	
 });
 
+
+
 Route::get('categories', function(Request $request) {
 	return \App\Category::paginate(10);
 });
