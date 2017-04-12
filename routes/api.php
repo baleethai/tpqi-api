@@ -37,5 +37,5 @@ Route::get('categories', function(Request $request) {
 });
 
 Route::get('user', function(Request $request) {
-	return \App\User::paginate(10);
+	return App\User::paginate(10);
 });
