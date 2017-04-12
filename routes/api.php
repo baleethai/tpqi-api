@@ -36,6 +36,6 @@ Route::get('categories', function(Request $request) {
 	return \App\Category::paginate(10);
 });
 
-Route::get('categories', function(Request $request) {
-	return \App\Category::paginate(10);
+Route::get('user', function(Request $request) {
+	return \App\User::paginate(10);
 });
