@@ -19,11 +19,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('news', function(Request $request) {
 
-	if($request->has('page') && !is_numeric($request->get('page'))) {
+	if( $request->has('page') && !is_numeric($request->get('page')) ) {
 		return response()->json(["status" => "fail"]);
 	}
 
-	if($request->has('category_id')) {
+	if( $request->has('category_id') ) {
 		$cats = explode(',', $request->get('category_id'));
 		return \App\News::whereIn('category_id', $cats)->paginate(10);
 	}
