@@ -20,7 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('news', function(Request $request) {
 
 	if( $request->has('page') && !is_numeric($request->get('page')) ) {
-		return response()->json(["status" => "fail"], 400);
+		// return response()->json(["status" => "fail"], 400);
+		return response()->json()->setStatusCode(400, 'Bad request');
 	}
 
 	if( $request->has('category_id') ) {
